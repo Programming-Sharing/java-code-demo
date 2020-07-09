@@ -5,6 +5,9 @@ import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
 public class PsRoutingDataSource extends AbstractRoutingDataSource {
     @Override
     protected String determineCurrentLookupKey() {
-        return BranchContextHolder.getCurrentBranch().name();
+        if (BranchContextHolder.getCurrentBranch() != null){
+            return BranchContextHolder.getCurrentBranch();
+        }
+        return null;
     }
 }

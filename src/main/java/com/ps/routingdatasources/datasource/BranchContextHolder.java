@@ -1,15 +1,13 @@
 package com.ps.routingdatasources.datasource;
 
-import com.ps.routingdatasources.BranchList;
-
 public class BranchContextHolder {
-    private static ThreadLocal<BranchList> threadLocal = new ThreadLocal<>();
+    private static ThreadLocal<String> threadLocal = new ThreadLocal<>();
 
-    public static void setBranchContext(BranchList branch){
+    public static void setBranchContext(String branch){
         threadLocal.set(branch);
     }
 
-    public static BranchList getCurrentBranch(){
+    public static String getCurrentBranch(){
         return threadLocal.get();
     }
 

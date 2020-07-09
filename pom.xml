@@ -12,7 +12,16 @@
     <artifactId>routing-data-sources</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>routing-data-sources</name>
-    <description>Demo project for Spring Boot</description>
+    <description>Demo project for Implement routing Data Sources in Spring</description>
+
+    <developers>
+        <developer>
+            <name>Thanh Tran</name>
+            <email>tranthanhdeveloper@gmail.com</email>
+            <organization>Programming Sharing blog</organization>
+            <organizationUrl>http://programmingsharing.com</organizationUrl>
+        </developer>
+    </developers>
 
     <properties>
         <java.version>11</java.version>

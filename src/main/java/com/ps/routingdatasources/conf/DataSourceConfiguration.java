@@ -1,13 +1,10 @@
 package com.ps.routingdatasources.conf;
 
-import com.ps.routingdatasources.BranchList;
+import com.ps.routingdatasources.constants.BranchList;
 import com.ps.routingdatasources.datasource.PsRoutingDataSource;
-import com.zaxxer.hikari.HikariDataSource;
-import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import org.springframework.orm.jpa.LocalEntityManagerFactoryBean;
 
 import javax.sql.DataSource;
 import java.util.HashMap;
@@ -20,11 +17,13 @@ public class DataSourceConfiguration {
     public DataSource dataSource() {
         PsRoutingDataSource psRoutingDataSource = new PsRoutingDataSource();
         Map<Object, Object> targetDataSources = new HashMap<>();
-        targetDataSources.put(BranchList.BRANCH_1.name(), branchADataSource());
-        targetDataSources.put(BranchList.BRANCH_2.name(), branchBDataSource());
-        targetDataSources.put(BranchList.BRANCH_3.name(), branchCDataSource());
+        targetDataSources.put(BranchList.BRANCH_1, branchADataSource());
+        targetDataSources.put(BranchList.BRANCH_2, branchBDataSource());
+        targetDataSources.put(BranchList.BRANCH_3, branchCDataSource());
         psRoutingDataSource.setTargetDataSources(targetDataSources);
-        psRoutingDataSource.setDefaultTargetDataSource(branchADataSource());
+
+        psRoutingDataSource.setDefaultTargetDataSource(branchCDataSource());
+
         return psRoutingDataSource;
     }
 
@@ -57,5 +56,4 @@ public class DataSourceConfiguration {
         dataSource.setPassword("123456789@Asdfghjkl");
         return dataSource;
     }
-
 }
