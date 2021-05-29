@@ -2,3 +2,4 @@
 /*.project
 /.settings/*.prefs
 /target/classes/META-INF/*.MF
+/.idea/

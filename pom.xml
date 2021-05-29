@@ -4,4 +4,16 @@
   <artifactId>demo</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>Demo Project</name>
+  <description>Topical of Java Core, Algorithm</description>
+  <organization>
+    <name>Programming Sharing</name>
+    <url>https://programmingsharing.com</url>
+  </organization>
+  <developers>
+    <developer>
+      <url>https://tranthanhdeveloper.com</url>
+      <name>Thanh Tran</name>
+      <email>tranthanhdeveloper@gmail.com</email>
+    </developer>
+  </developers>
 </project>
